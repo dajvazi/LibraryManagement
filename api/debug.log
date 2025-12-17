@@ -1,0 +1,352 @@
+[2025-12-12 23:39:37] New Request | DATA: list all books
+[2025-12-12 23:39:37] Mode: SQL
+[2025-12-12 23:40:14] SQL LLM Raw Response | DATA: {"sql": "SELECT id, title, author, genre, status, added_at FROM books WHERE user_id = ? ORDER BY added_at DESC LIMIT 50", "intent": "list"}
+[2025-12-12 23:40:14] Generated SQL | DATA: SELECT id, title, author, genre, status, added_at FROM books WHERE user_id = ? ORDER BY added_at DESC LIMIT 50
+[2025-12-12 23:40:41] New Request | DATA: test
+[2025-12-12 23:40:41] Mode: RAG
+[2025-12-12 23:41:11] New Request | DATA: hello
+[2025-12-12 23:41:11] Mode: RAG
+[2025-12-12 23:41:45] New Request | DATA: completed
+[2025-12-12 23:41:45] Mode: SQL
+[2025-12-12 23:42:07] SQL LLM Raw Response | DATA: {"sql": "SELECT id, title, author, status FROM books WHERE status = 'completed' AND user_id = ? ORDER BY added_at DESC LIMIT 50", "intent": "list"}
+[2025-12-12 23:42:07] Generated SQL | DATA: SELECT id, title, author, status FROM books WHERE status = 'completed' AND user_id = ? ORDER BY added_at DESC LIMIT 50
+[2025-12-12 23:42:23] New Request | DATA: list all books
+[2025-12-12 23:42:23] Mode: SQL
+[2025-12-12 23:42:44] SQL LLM Raw Response | DATA: {
+  "sql": "SELECT id, title, author, genre, status, added_at FROM books WHERE user_id = ? ORDER BY added_at DESC LIMIT 50",
+  "intent": "list"
+}
+[2025-12-12 23:42:44] Generated SQL | DATA: SELECT id, title, author, genre, status, added_at FROM books WHERE user_id = ? ORDER BY added_at DESC LIMIT 50
+[2025-12-14 20:40:33] New Request | DATA: books
+[2025-12-14 20:40:33] Mode: RAG
+[2025-12-14 20:41:31] New Request | DATA: books
+[2025-12-14 20:41:31] Mode: RAG
+[2025-12-15 09:56:57] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"hello"}
+[2025-12-15 09:56:57] Mode: RAG
+[2025-12-15 09:57:37] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"genre"}
+[2025-12-15 09:57:37] Mode: SQL
+[2025-12-15 09:58:06] SQL LLM Raw Response | DATA: {"sql":"SELECT id,user_id,title,author,genre,status,added_at FROM books ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 09:58:06] Generated SQL | DATA: SELECT id,user_id,title,author,genre,status,added_at FROM books ORDER BY added_at DESC LIMIT 50
+[2025-12-15 09:58:34] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"write the total books"}
+[2025-12-15 09:58:34] Mode: RAG
+[2025-12-15 10:00:43] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-15 10:00:43] Mode: RAG
+[2025-12-15 10:02:03] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-15 10:02:03] Mode: RAG
+[2025-12-15 10:02:23] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"completed"}
+[2025-12-15 10:02:23] Mode: SQL
+[2025-12-15 10:02:52] SQL LLM Raw Response | DATA: {"sql":"SELECT id,user_id,title,author,status FROM books WHERE status = 'completed' ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:02:52] Generated SQL | DATA: SELECT id,user_id,title,author,status FROM books WHERE status = 'completed' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:03:01] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"who is the author of book Meshari"}
+[2025-12-15 10:03:01] Mode: SQL
+[2025-12-15 10:03:33] SQL LLM Raw Response | DATA: {"sql":"SELECT author FROM books WHERE title = 'Meshari' LIMIT 50","intent":"get_author"}
+[2025-12-15 10:03:33] Generated SQL | DATA: SELECT author FROM books WHERE title = 'Meshari' LIMIT 50
+[2025-12-15 10:04:06] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"hello"}
+[2025-12-15 10:04:06] Mode: RAG
+[2025-12-15 10:04:39] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what about Meshari"}
+[2025-12-15 10:04:39] Mode: RAG
+[2025-12-15 10:05:26] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"What is Donart Ajvazi"}
+[2025-12-15 10:05:26] Mode: RAG
+[2025-12-15 10:06:02] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"who posted that book"}
+[2025-12-15 10:06:02] Mode: RAG
+[2025-12-15 10:09:17] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"hello"}
+[2025-12-15 10:09:17] Mode: RAG
+[2025-12-15 10:10:55] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"what about troja"}
+[2025-12-15 10:10:55] Mode: RAG
+[2025-12-15 10:11:38] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"what are the book of user ID 16"}
+[2025-12-15 10:11:38] Mode: RAG
+[2025-12-15 10:12:13] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"search for book test"}
+[2025-12-15 10:12:13] Mode: RAG
+[2025-12-15 10:12:41] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"do it"}
+[2025-12-15 10:12:41] Mode: RAG
+[2025-12-15 10:13:32] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"make all of them completed"}
+[2025-12-15 10:13:32] Mode: SQL
+[2025-12-15 10:14:01] SQL LLM Raw Response | DATA: {"sql":"SELECT id,user_id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status IN ('planned', 'reading') AND status = 'completed' ORDER BY added_at DESC LIMIT 50","intent":"update"}
+[2025-12-15 10:14:01] Generated SQL | DATA: SELECT id,user_id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status IN ('planned', 'reading') AND status = 'completed' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:14:01] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:15:14] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"Who owns the most books?"}
+[2025-12-15 10:15:14] Mode: RAG
+[2025-12-15 10:16:06] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"how many users are there"}
+[2025-12-15 10:16:06] Mode: SQL
+[2025-12-15 10:16:29] SQL LLM Raw Response | DATA: {"sql":"SELECT COUNT(DISTINCT user_id) FROM books","intent":"count"}
+[2025-12-15 10:16:29] Generated SQL | DATA: SELECT COUNT(DISTINCT user_id) FROM books
+[2025-12-15 10:16:38] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"Show the five reading books."}
+[2025-12-15 10:16:38] Mode: SQL
+[2025-12-15 10:17:05] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='reading' ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:17:05] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='reading' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:17:05] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:17:05] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"Show the five reading books."}
+[2025-12-15 10:17:05] Mode: SQL
+[2025-12-15 10:17:15] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='reading' ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:17:15] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='reading' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:17:15] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:17:16] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"show the planned books"}
+[2025-12-15 10:17:16] Mode: SQL
+[2025-12-15 10:17:26] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE status=? AND user_id=? ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:17:26] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE status=? AND user_id=? ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:17:26] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:17:32] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"hello"}
+[2025-12-15 10:17:32] Mode: RAG
+[2025-12-15 10:20:02] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"show me the Planned books"}
+[2025-12-15 10:20:02] Mode: SQL
+[2025-12-15 10:20:33] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE status=? AND user_id=? ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:20:33] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE status=? AND user_id=? ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:20:33] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:21:19] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"completed"}
+[2025-12-15 10:21:19] Mode: SQL
+[2025-12-15 10:21:44] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE status='completed' AND user_id=? ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:21:44] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE status='completed' AND user_id=? ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:21:44] FATAL ERROR | DATA: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND user_id = ?' at line 1 in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:191
+[2025-12-15 10:25:25] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"hello"}
+[2025-12-15 10:25:25] Mode: RAG
+[2025-12-15 10:26:08] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"completed"}
+[2025-12-15 10:26:08] Mode: SQL
+[2025-12-15 10:26:35] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='completed' ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:26:35] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='completed' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:26:54] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"planned"}
+[2025-12-15 10:26:54] Mode: SQL
+[2025-12-15 10:27:25] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='planned' ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:27:25] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? AND status='planned' ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:36:53] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"hello"}
+[2025-12-15 10:36:53] Mode: RAG
+[2025-12-15 10:37:43] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"show me the olanned books"}
+[2025-12-15 10:37:43] Mode: SQL
+[2025-12-15 10:38:11] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE status='planned' AND user_id=? ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 10:38:11] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE status='planned' AND user_id=? ORDER BY added_at DESC LIMIT 50
+[2025-12-15 10:38:45] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"who posted them"}
+[2025-12-15 10:38:45] Mode: RAG
+[2025-12-15 10:41:13] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"do you have any reccomandation"}
+[2025-12-15 10:41:13] Mode: RAG
+[2025-12-15 10:41:56] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"do you have drama books"}
+[2025-12-15 10:41:56] Mode: RAG
+[2025-12-15 10:42:25] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"yes, do it"}
+[2025-12-15 10:42:25] Mode: RAG
+[2025-12-15 10:43:30] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"ku je biro"}
+[2025-12-15 10:43:30] Mode: RAG
+[2025-12-15 10:44:26] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"how many users are in db"}
+[2025-12-15 10:44:26] Mode: SQL
+[2025-12-15 10:44:58] SQL LLM Raw Response | DATA: {"sql":"SELECT COUNT(DISTINCT id) FROM users","intent":"count"}
+[2025-12-15 10:44:58] Generated SQL | DATA: SELECT COUNT(DISTINCT id) FROM users
+[2025-12-15 10:44:58] FATAL ERROR | DATA: Only books queries allowed in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:231
+[2025-12-15 10:46:32] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"how many clients have books"}
+[2025-12-15 10:46:32] Mode: SQL
+[2025-12-15 10:46:38] SQL LLM Raw Response | DATA: {"sql":"SELECT COUNT(DISTINCT books.user_id) FROM books","intent":"count"}
+[2025-12-15 10:46:38] Generated SQL | DATA: SELECT COUNT(DISTINCT books.user_id) FROM books
+[2025-12-15 10:47:08] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"who posted the book meshari"}
+[2025-12-15 10:47:08] Mode: RAG
+[2025-12-15 10:47:47] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what about client \"d\""}
+[2025-12-15 10:47:47] Mode: RAG
+[2025-12-15 10:48:30] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what is the role of \"d\""}
+[2025-12-15 10:48:30] Mode: RAG
+[2025-12-15 10:49:20] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"which user has role admin"}
+[2025-12-15 10:49:20] Mode: RAG
+[2025-12-15 10:57:42] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what about client \"da\""}
+[2025-12-15 10:57:42] Mode: SQL
+[2025-12-15 10:58:42] CURL Error | DATA: Operation timed out after 60010 milliseconds with 0 bytes received
+[2025-12-15 10:58:42] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:122
+[2025-12-15 10:59:06] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"which users are clients"}
+[2025-12-15 10:59:06] Mode: SQL
+[2025-12-15 10:59:15] SQL LLM Raw Response | DATA: {"sql":"SELECT id,name,email,role FROM users WHERE role='client' ORDER BY id ASC LIMIT 50","intent":"users"}
+[2025-12-15 10:59:15] Generated SQL | DATA: SELECT id,name,email,role FROM users WHERE role='client' ORDER BY id ASC LIMIT 50
+[2025-12-15 10:59:15] FATAL ERROR | DATA: Only books queries allowed in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:266
+[2025-12-15 11:00:12] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"which users are client"}
+[2025-12-15 11:00:12] Mode: SQL
+[2025-12-15 11:00:20] SQL LLM Raw Response | DATA: {"sql":"SELECT id,name,email,role FROM users WHERE role='client' ORDER BY id ASC LIMIT 50","intent":"users"}
+[2025-12-15 11:00:20] Generated SQL | DATA: SELECT id,name,email,role FROM users WHERE role='client' ORDER BY id ASC LIMIT 50
+[2025-12-15 11:00:44] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"which is admin"}
+[2025-12-15 11:00:44] Mode: SQL
+[2025-12-15 11:01:37] SQL LLM Raw Response | DATA: {"sql":"SELECT id,name,email,role FROM users WHERE role='admin' ORDER BY id ASC LIMIT 50","intent":"users"}
+[2025-12-15 11:01:37] Generated SQL | DATA: SELECT id,name,email,role FROM users WHERE role='admin' ORDER BY id ASC LIMIT 50
+[2025-12-15 12:35:37] CURL Error | DATA: Operation timed out after 5639825 milliseconds with 0 bytes received
+[2025-12-15 12:35:37] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:122
+[2025-12-15 12:36:14] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what about Edison Ndou"}
+[2025-12-15 12:36:14] Mode: RAG
+[2025-12-15 12:55:16] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"most popular genre"}
+[2025-12-15 12:55:16] Mode: SQL
+[2025-12-15 12:56:17] CURL Error | DATA: Operation timed out after 60009 milliseconds with 0 bytes received
+[2025-12-15 12:56:17] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:122
+[2025-12-15 12:57:06] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"which genre has the most books"}
+[2025-12-15 12:57:06] Mode: SQL
+[2025-12-15 12:57:16] SQL LLM Raw Response | DATA: {"sql":"SELECT genre, COUNT(*) AS book_count FROM books GROUP BY genre ORDER BY book_count DESC LIMIT 50","intent":"books"}
+[2025-12-15 12:57:16] Generated SQL | DATA: SELECT genre, COUNT(*) AS book_count FROM books GROUP BY genre ORDER BY book_count DESC LIMIT 50
+[2025-12-15 13:01:25] New Request | DATA: {"role":"client","userId":16,"scopeUserId":16,"message":"what about plaku dhe deti"}
+[2025-12-15 13:01:25] Mode: RAG
+[2025-12-15 13:02:17] New Request | DATA: {"role":"client","userId":16,"scopeUserId":16,"message":"who is the author"}
+[2025-12-15 13:02:17] Mode: SQL
+[2025-12-15 13:02:45] SQL LLM Raw Response | DATA: {"sql":"SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? ORDER BY added_at DESC LIMIT 50","intent":"list"}
+[2025-12-15 13:02:45] Generated SQL | DATA: SELECT id,title,author,genre,status,added_at FROM books WHERE user_id=? ORDER BY added_at DESC LIMIT 50
+[2025-12-15 13:09:13] New Request | DATA: {"role":"client","userId":17,"scopeUserId":17,"message":"fuck you donart"}
+[2025-12-15 13:09:13] Mode: RAG
+[2025-12-15 20:08:32] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"hello"}
+[2025-12-15 20:08:32] Mode: RAG
+[2025-12-15 20:09:14] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"message":"what about Troja"}
+[2025-12-15 20:09:14] Mode: RAG
+[2025-12-15 22:18:24] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"hello"}
+[2025-12-15 22:18:24] Mode: RAG
+[2025-12-15 22:18:24] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 3 ms: Could not connect to server
+[2025-12-15 22:18:24] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:18:29] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"test"}
+[2025-12-15 22:18:29] Mode: RAG
+[2025-12-15 22:18:29] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server
+[2025-12-15 22:18:29] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:29:26] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"hello"}
+[2025-12-15 22:29:26] Mode: RAG
+[2025-12-15 22:29:26] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 2 ms: Could not connect to server
+[2025-12-15 22:29:26] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:37:52] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"hello"}
+[2025-12-15 22:37:52] Mode: RAG
+[2025-12-15 22:37:52] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 6 ms: Could not connect to server
+[2025-12-15 22:37:52] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:37:54] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"test"}
+[2025-12-15 22:37:54] Mode: RAG
+[2025-12-15 22:37:54] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 0 ms: Could not connect to server
+[2025-12-15 22:37:54] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:40:03] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"hello"}
+[2025-12-15 22:40:03] Mode: RAG
+[2025-12-15 22:40:03] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 2 ms: Could not connect to server
+[2025-12-15 22:40:03] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:41:26] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"hello"}
+[2025-12-15 22:41:26] Mode: RAG
+[2025-12-15 22:41:26] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 21 ms: Could not connect to server
+[2025-12-15 22:41:26] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-15 22:42:51] New Request | DATA: {"role":"admin","userId":6,"scopeUserId":null,"message":"helo"}
+[2025-12-15 22:42:51] Mode: RAG
+[2025-12-15 22:42:51] CURL Error | DATA: Failed to connect to 127.0.0.1 port 11434 after 1 ms: Could not connect to server
+[2025-12-15 22:42:51] FATAL ERROR | DATA: Ollama Connection Error in /var/www/html/api/chat_reply.php:122
+[2025-12-16 13:53:18] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 13:53:18] Mode: RAG
+[2025-12-16 13:54:23] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 13:54:23] Mode: RAG
+[2025-12-16 13:56:11] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 13:56:11] Mode: RAG
+[2025-12-16 13:57:27] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 13:57:27] Mode: RAG
+[2025-12-16 13:58:44] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 13:58:44] Mode: RAG
+[2025-12-16 14:00:16] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 14:00:16] Mode: RAG
+[2025-12-16 14:02:46] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 14:02:46] Mode: RAG
+[2025-12-16 14:03:59] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"test"}
+[2025-12-16 14:03:59] Mode: RAG
+[2025-12-16 14:04:44] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"tell more about Donart Ajvazi"}
+[2025-12-16 14:04:44] Mode: RAG
+[2025-12-16 14:05:31] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"what about client \"d\", which is his favorite genre"}
+[2025-12-16 14:05:31] Mode: SQL
+[2025-12-16 14:06:31] CURL Error | DATA: Operation timed out after 60007 milliseconds with 0 bytes received
+[2025-12-16 14:06:31] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:122
+[2025-12-16 14:12:06] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"hello"}
+[2025-12-16 14:12:06] Mode: RAG
+[2025-12-16 14:15:39] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"make a summarize about user donart"}
+[2025-12-16 14:15:39] Mode: SQL
+[2025-12-16 14:16:31] SQL LLM Raw Response | DATA: {"sql":"SELECT COUNT(id) AS user_count FROM users","intent":"users"}
+[2025-12-16 14:16:31] Generated SQL | DATA: SELECT COUNT(id) AS user_count FROM users
+[2025-12-16 14:17:33] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"library insights for user \"donart\""}
+[2025-12-16 14:17:33] Mode: SQL
+[2025-12-16 14:18:33] CURL Error | DATA: Operation timed out after 60015 milliseconds with 0 bytes received
+[2025-12-16 14:18:33] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:122
+[2025-12-16 14:20:14] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"message":"library insights for all users"}
+[2025-12-16 14:20:14] Mode: SQL
+[2025-12-16 14:20:24] SQL LLM Raw Response | DATA: {"sql":"SELECT COUNT(books.id) AS total_books, COUNT(DISTINCT users.id) AS total_users FROM books, users","intent":"books"}
+[2025-12-16 14:20:24] Generated SQL | DATA: SELECT COUNT(books.id) AS total_books, COUNT(DISTINCT users.id) AS total_users FROM books, users
+[2025-12-16 14:26:28] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":15,"targetUserText":"donart","message":"make a summarize about user donart"}
+[2025-12-16 14:29:51] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":15,"targetUserText":"donart","message":"make a summarize about user donart"}
+[2025-12-16 14:32:21] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"which genre is used the most"}
+[2025-12-16 14:32:21] Mode: SQL
+[2025-12-16 14:32:54] SQL LLM Raw Response | DATA: {"query": "SELECT genre FROM books GROUP BY genre ORDER BY COUNT(*) DESC LIMIT 50"}
+[2025-12-16 14:32:54] FATAL ERROR | DATA: LLM failed to generate valid SQL. in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:415
+[2025-12-16 14:33:23] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"top genre"}
+[2025-12-16 14:33:23] Mode: SQL
+[2025-12-16 14:34:23] CURL Error | DATA: Operation timed out after 60017 milliseconds with 0 bytes received
+[2025-12-16 14:34:23] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:150
+[2025-12-16 14:34:37] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"Who owns the most books?"}
+[2025-12-16 14:34:37] Mode: SQL
+[2025-12-16 14:35:37] CURL Error | DATA: Operation timed out after 60013 milliseconds with 0 bytes received
+[2025-12-16 14:35:37] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:150
+[2025-12-16 14:35:40] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"Suggested books based on genre"}
+[2025-12-16 14:35:40] Mode: SQL
+[2025-12-16 14:36:40] CURL Error | DATA: Operation timed out after 60010 milliseconds with 0 bytes received
+[2025-12-16 14:36:40] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:150
+[2025-12-16 14:36:59] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":18,"targetUserText":"s","message":"summarize insighs for all users"}
+[2025-12-16 14:37:52] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":18,"targetUserText":"s","message":"summarize insighs for all users"}
+[2025-12-16 14:38:28] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"summarize insighs for donart"}
+[2025-12-16 14:39:49] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"summarize insighs for edison"}
+[2025-12-16 14:40:59] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"how many clients have books"}
+[2025-12-16 14:40:59] Mode: SQL
+[2025-12-16 14:41:31] SQL LLM Raw Response | DATA: {"count": 50}
+[2025-12-16 14:41:31] FATAL ERROR | DATA: LLM failed to generate valid SQL. in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:415
+[2025-12-16 14:44:34] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"how many clients have books"}
+[2025-12-16 14:44:34] Mode: SQL
+[2025-12-16 14:44:42] SQL LLM Raw Response | DATA: {"count": 50}
+[2025-12-16 14:44:55] SQL LLM Retry Response | DATA: {"sql":"SELECT COUNT(DISTINCT users.id) FROM users JOIN books ON users.id = books.user_id","intent":"count_users_with_books"}
+[2025-12-16 14:44:55] Generated SQL | DATA: SELECT COUNT(DISTINCT users.id) FROM users JOIN books ON users.id = books.user_id
+[2025-12-16 14:45:33] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"how many clients are registerd"}
+[2025-12-16 14:45:33] Mode: SQL
+[2025-12-16 14:46:05] SQL LLM Raw Response | DATA: {"count": 50}
+[2025-12-16 14:46:14] SQL LLM Retry Response | DATA: {"sql":"SELECT COUNT(*) FROM users WHERE role = 'client'"}
+[2025-12-16 14:46:14] Generated SQL | DATA: SELECT COUNT(*) FROM users WHERE role = 'client'
+[2025-12-16 14:47:14] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"how many books are added"}
+[2025-12-16 14:47:14] Mode: SQL
+[2025-12-16 14:47:46] SQL LLM Raw Response | DATA: {"count": 50}
+[2025-12-16 14:47:54] SQL LLM Retry Response | DATA: {"sql":"SELECT COUNT(*) FROM books;"}
+[2025-12-16 14:47:54] Generated SQL | DATA: SELECT COUNT(*) FROM books;
+[2025-12-16 14:47:54] FATAL ERROR | DATA: Multiple statements not allowed in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:444
+[2025-12-16 14:48:08] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"how many books are Fantasy genre"}
+[2025-12-16 14:48:08] Mode: SQL
+[2025-12-16 14:48:13] SQL LLM Raw Response | DATA: {"count": 50}
+[2025-12-16 14:48:23] SQL LLM Retry Response | DATA: {"sql":"SELECT COUNT(*) FROM books WHERE genre = 'Fantasy'"}
+[2025-12-16 14:48:23] Generated SQL | DATA: SELECT COUNT(*) FROM books WHERE genre = 'Fantasy'
+[2025-12-16 15:48:21] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"hello"}
+[2025-12-16 15:48:21] Mode: RAG
+[2025-12-16 15:49:13] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"which book has Fantasy genre"}
+[2025-12-16 15:49:13] Mode: SQL
+[2025-12-16 15:49:42] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT title, author FROM books WHERE genre = 'Fantasy'"}
+[2025-12-16 15:49:42] Generated SQL | DATA: SELECT title, author FROM books WHERE genre = 'Fantasy'
+[2025-12-16 15:50:12] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"Fantasy"}
+[2025-12-16 15:50:12] Mode: RAG
+[2025-12-16 15:51:17] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"total fantasy"}
+[2025-12-16 15:51:17] Mode: RAG
+[2025-12-16 15:52:23] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"show me the number of fantasy books"}
+[2025-12-16 15:52:23] Mode: SQL
+[2025-12-16 15:52:56] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE genre = 'fantasy'"}
+[2025-12-16 15:52:56] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE genre = 'fantasy'
+[2025-12-16 15:54:05] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"show me fantasy books"}
+[2025-12-16 15:54:05] Mode: SQL
+[2025-12-16 15:54:33] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT * FROM books WHERE genre=? ORDER BY added_at DESC LIMIT 50"}
+[2025-12-16 15:54:33] Generated SQL | DATA: SELECT * FROM books WHERE genre=? ORDER BY added_at DESC LIMIT 50
+[2025-12-16 15:54:33] FATAL ERROR | DATA: Too many placeholders in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:534
+[2025-12-16 15:54:57] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"fantasy"}
+[2025-12-16 15:54:57] Mode: RAG
+[2025-12-16 15:55:36] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"authors"}
+[2025-12-16 15:55:36] Mode: RAG
+[2025-12-16 15:56:52] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"status of books"}
+[2025-12-16 15:56:52] Mode: SQL
+[2025-12-16 15:57:19] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT title, author, genre, status, added_at FROM books WHERE user_id=? ORDER BY added_at DESC"}
+[2025-12-16 15:57:19] Generated SQL | DATA: SELECT title, author, genre, status, added_at FROM books WHERE user_id=? ORDER BY added_at DESC
+[2025-12-16 15:57:49] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"whats Meshari status"}
+[2025-12-16 15:57:49] Mode: SQL
+[2025-12-16 15:58:11] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status=?"}
+[2025-12-16 15:58:11] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status=?
+[2025-12-16 15:58:11] FATAL ERROR | DATA: Too many placeholders in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:534
+[2025-12-16 15:59:45] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"how many books do I have"}
+[2025-12-16 15:59:45] Mode: SQL
+[2025-12-16 15:59:50] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE user_id=?"}
+[2025-12-16 15:59:50] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=?
+[2025-12-16 16:00:06] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"list my latest 5 books"}
+[2025-12-16 16:00:06] Mode: SQL
+[2025-12-16 16:00:30] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT * FROM books WHERE user_id=? ORDER BY added_at DESC LIMIT 5"}
+[2025-12-16 16:00:30] Generated SQL | DATA: SELECT * FROM books WHERE user_id=? ORDER BY added_at DESC LIMIT 5
+[2025-12-16 16:00:58] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"show my completed books"}
+[2025-12-16 16:00:58] Mode: SQL
+[2025-12-16 16:01:27] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT * FROM books WHERE user_id=? AND status = 'completed' ORDER BY added_at DESC LIMIT 50"}
+[2025-12-16 16:01:27] Generated SQL | DATA: SELECT * FROM books WHERE user_id=? AND status = 'completed' ORDER BY added_at DESC LIMIT 50
+[2025-12-16 16:01:48] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"how many completed books do I have"}
+[2025-12-16 16:01:48] Mode: SQL
+[2025-12-16 16:02:15] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status = 'completed'"}
+[2025-12-16 16:02:15] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status = 'completed'
+[2025-12-16 16:05:22] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"how many completed books do I have"}
+[2025-12-16 16:05:22] Mode: SQL
+[2025-12-16 16:05:48] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status = 'completed'"}
+[2025-12-16 16:05:48] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status = 'completed'
+[2025-12-16 16:06:23] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"test"}
+[2025-12-16 16:06:23] Mode: RAG
