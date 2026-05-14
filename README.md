@@ -3,7 +3,7 @@
 LibraryManagement is a web-based application for managing personal book collections, built with **PHP** and **MariaDB**, and enhanced with an **AI-powered assistant** for intelligent queries, analytics, and insights.
 
 ## Live Demo
-- Production (AI disabled): https://libmanagement.infinityfree.me
+- Production: https://libmanagement.infinityfree.me
 
 > Note: The AI Assistant works **only in a local environment**, as it relies on **free, locally hosted LLMs (Ollama)**.  
 > AI functionality is not available in the production deployment.
