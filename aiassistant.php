@@ -7,7 +7,6 @@ if (!isset($_SESSION['auth'])) {
   exit;
 }
 
-$BASE_URL = "/LibraryManagement"; 
 ?>
 
 <div class="container-fluid py-3" style="height:calc(100vh - 80px);">
@@ -111,8 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput  = document.getElementById('chatInput');
   const typingHint = document.getElementById('typingHint');
 
-  const API_URL = "<?= $BASE_URL ?>/api/chat_reply.php";
-
   function escapeHtml(str){
     return String(str)
       .replaceAll('&','&amp;')
@@ -143,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.className = "d-flex gap-3 align-items-start";
     wrap.innerHTML = `
       <div class="rounded-4 d-flex align-items-center justify-content-center flex-shrink-0"
-           style="width:40px;height:40px;background:rgba(25, 93, 135, 0.12);">
+           style="width:40px;height:40px;background:rgba(25,135,84,.12);">
         <i class="bi bi-stars text-success"></i>
       </div>
       <div class="px-3 py-3 rounded-4 bg-body-tertiary border" style="max-width:520px;">
@@ -157,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function askAssistant(message){
     typingHint.style.display = "block";
 
-    const res = await fetch(API_URL, {
+    const res = await fetch('api/chat_reply.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin',
@@ -166,28 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     typingHint.style.display = "none";
 
-    const contentType = res.headers.get('content-type') || '';
-    const rawText = await res.text();
-
     if(!res.ok){
-      addBotMsg("Server error: " + rawText);
+      addBotMsg("Server error. Please try again.");
       return;
     }
 
-    if(!contentType.includes('application/json')){
-      addBotMsg("Server didn't return JSON:\n" + rawText);
-      return;
-    }
-
-    let data;
-    try { data = JSON.parse(rawText); }
-    catch(e){
-      addBotMsg("Invalid JSON:\n" + rawText);
-      return;
-    }
-
-    if (data.error) addBotMsg("Error: " + data.error);
-    else addBotMsg(data.answer ?? "No reply.");
+    const data = await res.json();
+    addBotMsg(data.answer ?? "No reply.");
   }
 
   chatForm.addEventListener('submit', async (e) => {
@@ -204,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await askAssistant(msg);
     } catch(err) {
       typingHint.style.display = "none";
-      addBotMsg("Network/JS error: " + err.message);
+      addBotMsg("Network error. Please try again.");
     }
   });
 });

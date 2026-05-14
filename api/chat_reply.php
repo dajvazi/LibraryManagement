@@ -129,7 +129,7 @@ function ollama_post(string $base, string $path, array $payload): array {
         CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
         CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE),
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 60,
+        CURLOPT_TIMEOUT => 60, // Needs more time for complex questions!
         CURLOPT_CONNECTTIMEOUT => 10,
     ]);
 

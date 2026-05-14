@@ -1,6 +1,16 @@
 <?php
 session_start();
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+if (!file_exists('../config/dbcon.php')) {
+    die('dbcon.php not found');
+}
+
 include_once('../config/dbcon.php');
+
+echo "dbcon u lexua me sukses";
 
 ?>
 <script>

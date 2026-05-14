@@ -27,7 +27,7 @@ include "includes/header.php";
               <?php unset($_SESSION['message']); ?>
             <?php endif; ?>
 
-            <form action="LibraryManagement/functions/authcode.php" method="POST" class="needs-validation" novalidate>
+            <form action="functions/authcode.php" method="POST" class="needs-validation" novalidate>
 
               <div class="mb-3 auth-input">
                 <label for="name" class="form-label fw-semibold">Name</label>

@@ -350,3 +350,67 @@
 [2025-12-16 16:05:48] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=? AND status = 'completed'
 [2025-12-16 16:06:23] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"test"}
 [2025-12-16 16:06:23] Mode: RAG
+[2025-12-22 21:38:09] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"hello"}
+[2025-12-22 21:38:09] Mode: RAG
+[2025-12-22 21:39:12] CURL Error | DATA: Operation timed out after 60004 milliseconds with 0 bytes received
+[2025-12-22 21:39:12] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 21:40:49] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"hello"}
+[2025-12-22 21:40:49] Mode: RAG
+[2025-12-22 21:41:53] CURL Error | DATA: Operation timed out after 60008 milliseconds with 0 bytes received
+[2025-12-22 21:41:53] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 21:44:05] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"test"}
+[2025-12-22 21:44:05] Mode: RAG
+[2025-12-22 21:45:08] CURL Error | DATA: Operation timed out after 60006 milliseconds with 0 bytes received
+[2025-12-22 21:45:08] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 21:45:41] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"total books"}
+[2025-12-22 21:45:41] Mode: RAG
+[2025-12-22 21:48:43] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"total books of \"user\""}
+[2025-12-22 21:48:43] Mode: SQL
+[2025-12-22 21:49:24] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(*) AS c FROM books WHERE user_id=?"}
+[2025-12-22 21:49:24] Generated SQL | DATA: SELECT COUNT(*) AS c FROM books WHERE user_id=?
+[2025-12-22 21:50:28] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"who added most books"}
+[2025-12-22 21:50:28] Mode: SQL
+[2025-12-22 21:51:19] SQL LLM Raw Response | DATA: {"intent":"count","sql":"SELECT COUNT(books.id) AS c FROM books GROUP BY books.user_id ORDER BY c DESC LIMIT 50"}
+[2025-12-22 21:51:19] Generated SQL | DATA: SELECT COUNT(books.id) AS c FROM books GROUP BY books.user_id ORDER BY c DESC LIMIT 50
+[2025-12-22 21:52:00] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"who added book \"Meshari\""}
+[2025-12-22 21:52:00] Mode: SQL
+[2025-12-22 21:52:50] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'"}
+[2025-12-22 21:52:50] Generated SQL | DATA: SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'
+[2025-12-22 21:53:50] CURL Error | DATA: Operation timed out after 60012 milliseconds with 0 bytes received
+[2025-12-22 21:53:50] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 21:54:21] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"who posted book meshari"}
+[2025-12-22 21:54:21] Mode: SQL
+[2025-12-22 21:55:07] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT authors FROM books WHERE title = 'book meshari'"}
+[2025-12-22 21:55:07] Generated SQL | DATA: SELECT authors FROM books WHERE title = 'book meshari'
+[2025-12-22 21:55:07] FATAL ERROR | DATA: Unknown column 'authors' in 'field list' in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:510
+[2025-12-22 21:55:39] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"who posted book \"Meshari\""}
+[2025-12-22 21:55:39] Mode: SQL
+[2025-12-22 21:55:48] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'"}
+[2025-12-22 21:55:48] Generated SQL | DATA: SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'
+[2025-12-22 21:56:48] CURL Error | DATA: Operation timed out after 60007 milliseconds with 0 bytes received
+[2025-12-22 21:56:48] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 21:57:46] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":null,"targetUserText":null,"message":"who posted book \"Meshari\""}
+[2025-12-22 21:57:46] Mode: SQL
+[2025-12-22 21:58:36] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'"}
+[2025-12-22 21:58:36] Generated SQL | DATA: SELECT u.name FROM users u JOIN books b ON u.id = b.user_id WHERE b.title = 'Meshari'
+[2025-12-22 22:01:22] New Request | DATA: {"role":"admin","userId":13,"scopeUserId":18,"targetUserText":"s","message":"show the name of all users"}
+[2025-12-22 22:01:22] Mode: SQL
+[2025-12-22 22:02:09] SQL LLM Raw Response | DATA: {"intent":"sql","sql":"SELECT id, name, email, role FROM users LIMIT 50"}
+[2025-12-22 22:02:09] Generated SQL | DATA: SELECT id, name, email, role FROM users LIMIT 50
+[2025-12-22 22:03:53] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"hello"}
+[2025-12-22 22:03:53] Mode: RAG
+[2025-12-22 22:06:46] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"what do you recommend me to read"}
+[2025-12-22 22:08:10] New Request | DATA: {"role":"client","userId":15,"scopeUserId":15,"targetUserText":null,"message":"based on my genres"}
+[2025-12-22 22:08:10] Mode: RAG
+[2025-12-22 22:09:14] CURL Error | DATA: Operation timed out after 60016 milliseconds with 0 bytes received
+[2025-12-22 22:09:14] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
+[2025-12-22 22:10:16] New Request | DATA: {"role":"client","userId":18,"scopeUserId":18,"targetUserText":null,"message":"hi"}
+[2025-12-22 22:10:16] Mode: RAG
+[2025-12-22 22:11:32] New Request | DATA: {"role":"client","userId":18,"scopeUserId":18,"targetUserText":null,"message":"hello"}
+[2025-12-22 22:11:32] Mode: RAG
+[2025-12-22 22:13:10] New Request | DATA: {"role":"client","userId":18,"scopeUserId":18,"targetUserText":null,"message":"hello, how are you"}
+[2025-12-22 22:13:10] Mode: RAG
+[2026-05-14 14:50:16] New Request | DATA: {"role":"client","userId":19,"scopeUserId":19,"targetUserText":null,"message":"hello"}
+[2026-05-14 14:50:16] Mode: RAG
+[2026-05-14 14:51:20] CURL Error | DATA: Operation timed out after 60003 milliseconds with 0 bytes received
+[2026-05-14 14:51:20] FATAL ERROR | DATA: Ollama Connection Error in C:\xampp-new\htdocs\LibraryManagement\api\chat_reply.php:143
