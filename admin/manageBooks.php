@@ -1,13 +1,17 @@
 <?php
-include('../includes/header.php');
+require_once __DIR__ . '/../includes/require_admin.php';
 include('../functions/functions.php');
+include('../includes/header.php');
 
 if (isset($_SESSION['auth'])) {
   if ($_SESSION['auth_user']['role'] !== "admin") {
     header('Location: ../index.php');
+    exit();
   }
 }else{
   header('Location: ../login.php');
+  exit();
+
 }
 
 ?>

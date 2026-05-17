@@ -1,9 +1,11 @@
 <?php
+require_once __DIR__ . '/../includes/require_admin.php';
 include('../includes/header.php');
 include('../functions/functions.php');
 
 if (!isset($_SESSION['auth'])) {
   header('Location: ../login.php');
+  exit();
 }
 ?>
 
